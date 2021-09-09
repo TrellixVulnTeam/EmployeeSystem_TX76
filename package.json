@@ -25,7 +25,6 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "loading-cli": "^1.1.0",
-    "md5": "^2.3.0",
     "mongodb": "^3.6.2",
     "mongoose": "^5.10.10",
     "node-gyp": "^8.2.0"
