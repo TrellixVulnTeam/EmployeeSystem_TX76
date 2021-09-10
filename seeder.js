@@ -6,7 +6,7 @@ const path = require("path");
 /**
  * constants
  */
-const uri = "mongodb+srv://admin:admin@employeemanagementsyste.zbxsu.mongodb.net/EmployeeManagementSystem?retryWrites=true&w=majority";
+const uri = "mongodb://localhost:27017/data";
 const client = new MongoClient(uri);
 
 async function main() {
@@ -30,7 +30,7 @@ async function main() {
     const data = await fs.readFile(path.join(__dirname, "data.json"), "utf8");
     await db.collection("employees").insertMany(JSON.parse(data));
 
-    
+    //displays message when data is imported
     console.info(
       `employees collection set up!`
     );

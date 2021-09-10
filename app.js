@@ -30,7 +30,7 @@ const { PORT, MONGODB_URI } = process.env;
  * connect to database
  */
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.on("error", (err) => {
   console.error(err);
   console.log(
@@ -41,7 +41,7 @@ mongoose.connection.on("error", (err) => {
 });
 
 /***
- * We are applying our middlewear
+ *  applying our middlewear
  */
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());

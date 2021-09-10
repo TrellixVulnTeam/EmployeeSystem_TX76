@@ -9,7 +9,8 @@ exports.list = async (req, res) => {
 
   try {
     const employees = await Employee.find({}).skip((perPage * page) - perPage).limit(limit);
-    const count = await Employee.find({}).count();
+    
+    const count = await Employee.find({}).countDocuments();
     const numberOfPages = Math.ceil(count / perPage);
 
     res.render("employees", {
